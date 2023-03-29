@@ -57,9 +57,10 @@
 
 1. The main purpose of this lesson is to show pdf file as images using pdfx package of flutter.
 2. There are three methods to load pdf in flutter app using this package:
-    - openData (From Internet)       => pdfController.loadDocument(PdfDocument.openData(InternetFile.get('
-      url')))
-    - openAsset (From App Assets)    => pdfController.loadDocument(PdfDocument.openAsset('assetPath'))
+    - openData (From Internet)       => pdfController.loadDocument(PdfDocument.openData(
+      InternetFile.get('url')))
+    - openAsset (From App Assets)    => pdfController.loadDocument(PdfDocument.openAsset('
+      assetPath'))
     - openFile (From Device Storage) => pdfController.loadDocument(PdfDocument.openFile('filePath'))
 3. We will cover `openData` and `openAsset` cases to view and show pdf files as Images.
 

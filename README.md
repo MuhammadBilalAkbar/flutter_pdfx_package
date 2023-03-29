@@ -181,6 +181,10 @@ When going to next or previous page, you can use animations as well.
         ),
 ```
 
+<br/><br/>
+![Screenshot](PdfViewPinch.gif)
+<br/><br/>
+
 - **Note:**
   <br/> If your use `PdfController` as controller then use `PdfView` in body to view pdf document in
   the body.

@@ -182,14 +182,15 @@ When going to next or previous page, you can use animations as well.
 ```
 
 <br/><br/>
-![Screenshot](PdfViewPinch.gif)
+![](https://raw.githubusercontent.com/ScerIO/packages.flutter/main/packages/pdfx/example/media/pinch.gif?raw=true)
 <br/><br/>
 
 - **Note:**
   <br/> If your use `PdfController` as controller then use `PdfView` in body to view pdf document in
   the body.
   <br/> Properties of `PdfController` & `PdfControllerPinch` are same.
-  <br/> Properties of `PdfView` & `PdfViewPinch` are same.
+  <br/> Properties of `PdfView` & `PdfViewPinch` are same. `PdfView` is mostly used for web, windows
+  or for large screens.
   <br/> See difference between these two
   on [https://github.com/ScerIO/packages.flutter/tree/main/packages/pdfx](https://github.com/ScerIO/packages.flutter/tree/main/packages/pdfx)
   .

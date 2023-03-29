@@ -186,6 +186,6 @@ When going to next or previous page, you can use animations as well.
   the body.
   <br/> Properties of `PdfController` & `PdfControllerPinch` are same.
   <br/> Properties of `PdfView` & `PdfViewPinch` are same.
-  <br/> See the official documentation for more
-  info.[https://github.com/ScerIO/packages.flutter/tree/main/packages/pdfx](https://github.com/ScerIO/packages.flutter/tree/main/packages/pdfx)
+  <br/> See difference between these two
+  on [https://github.com/ScerIO/packages.flutter/tree/main/packages/pdfx](https://github.com/ScerIO/packages.flutter/tree/main/packages/pdfx)
   .

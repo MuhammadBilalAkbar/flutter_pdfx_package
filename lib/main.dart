@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'pdf_view.dart';
+import 'home_page.dart';
 
 void main() => runApp(const MyApp());
 
@@ -10,6 +10,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) => MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(primaryColor: Colors.white),
-        home: const PdfView(),
+        home: const HomePage(),
       );
 }

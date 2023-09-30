@@ -2,22 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:internet_file/internet_file.dart';
 import 'package:pdfx/pdfx.dart';
 
-class PdfView extends StatefulWidget {
-  const PdfView({Key? key}) : super(key: key);
+class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
 
   @override
-  State<PdfView> createState() => _PdfViewState();
+  State<HomePage> createState() => _HomePageState();
 }
 
-class _PdfViewState extends State<PdfView> {
+class _HomePageState extends State<HomePage> {
   static const int initialPage = 1;
   late PdfControllerPinch pdfController;
 
   @override
   void initState() {
+    super.initState();
     pdfController = PdfControllerPinch(
       // For assets in project
-      // document: PdfDocument.openAsset('assets/hello.pdf'),
+      // document: PdfDocument.openAsset('assets/flutter_tutorial.pdf'),
       // For files in device storage
       // document: PdfDocument.openFile('filePath'),
       // For assets on internet
@@ -28,7 +29,6 @@ class _PdfViewState extends State<PdfView> {
       ),
       initialPage: initialPage,
     );
-    super.initState();
   }
 
   @override
@@ -54,10 +54,10 @@ class _PdfViewState extends State<PdfView> {
             ),
             PdfPageNumber(
               controller: pdfController,
-              builder: (_, loadingState, page, pagesCount) => Container(
+              builder: (_, loadingState, pageNumber, totalPages) => Container(
                 alignment: Alignment.center,
                 child: Text(
-                  '$page/${pagesCount ?? 0}',
+                  '$pageNumber/${totalPages ?? 0}',
                   style: const TextStyle(fontSize: 22),
                 ),
               ),
@@ -73,15 +73,15 @@ class _PdfViewState extends State<PdfView> {
             ),
             IconButton(
               icon: const Icon(Icons.refresh),
-              onPressed: () {
-                pdfController.loadDocument(
-                  PdfDocument.openAsset('assets/flutter_tutorial.pdf'),
-                );
-              },
-            )
+              onPressed: () => pdfController.loadDocument(
+                PdfDocument.openAsset('assets/flutter_tutorial.pdf'),
+              ),
+            ),
           ],
         ),
         body: PdfViewPinch(
+          controller: pdfController,
+          scrollDirection: Axis.vertical,
           builders: PdfViewPinchBuilders<DefaultBuilderOptions>(
             options: const DefaultBuilderOptions(),
             documentLoaderBuilder: (_) => const Center(
@@ -91,11 +91,12 @@ class _PdfViewState extends State<PdfView> {
               child: CircularProgressIndicator(),
             ),
             errorBuilder: (_, error) => Center(
-              child: Text(error.toString()),
+              child: Text(
+                error.toString(),
+                style: const TextStyle(color: Colors.red),
+              ),
             ),
           ),
-          controller: pdfController,
-          scrollDirection: Axis.vertical,
         ),
       );
 }
